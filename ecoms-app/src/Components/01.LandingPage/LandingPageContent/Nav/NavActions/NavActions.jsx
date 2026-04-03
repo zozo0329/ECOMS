@@ -3,10 +3,13 @@ import NotificationsIcon from "../../../../../Assets/Icons/Notification.png";
 import HelpIcon from "../../../../../Assets/Icons/Help_Icon.png";
 const NavActions = () => {
   return (
-    <div>
-      <nav>
+    <>
+      <nav className="bg-[#cecece]">
         <ul className="flex flex-row gap-5 items-center justify-end pr-10 pl-10">
-          <a href="" className="flex items-center gap-1">
+          <a
+            href=""
+            className="flex items-center gap-1 hover:opacity-60 transition-all duration-300"
+          >
             <span>
               <img
                 src={NotificationsIcon}
@@ -16,24 +19,27 @@ const NavActions = () => {
             </span>
             <li>Notifications</li>
           </a>
-          <p>|</p>
-          <a href="" className="flex items-center gap-1">
+          <p className="text-[#acacac]">|</p>
+          <a
+            href=""
+            className="flex items-center gap-1 hover:opacity-60 transition-all duration-300"
+          >
             <span>
               <img src={HelpIcon} alt="Help Icon" className="h-5 w-5" />
             </span>
             <li>Help</li>
           </a>
-          <p>|</p>
-          <a href="">
+          <p className="text-[#acacac] ">|</p>
+          <a href="" className="hover:opacity-60 transition-all duration-300">
             <li>Sign Up</li>
           </a>
-          <p>|</p>
-          <a href="">
+          <p className="text-[#acacac]">|</p>
+          <a href="" className="hover:opacity-60 transition-all duration-300">
             <li>Login</li>
           </a>
         </ul>
       </nav>
-    </div>
+    </>
   );
 };
 
