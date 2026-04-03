@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { fetchProducts } from "../../../../../Other/API/Products";
-import Card from "../../../../../UI/Card/Card";
 import ItemFormat from "./ItemFormat/ItemFormat";
 
 const BeautyPersonalCare = () => {
@@ -21,7 +20,7 @@ const BeautyPersonalCare = () => {
   }, []);
 
   const formattedProducts = useMemo(() => {
-    return beautyProducts.slice(0, 4).map((product) => {
+    return beautyProducts.slice(0, 5).map((product) => {
       return {
         name: product.name,
         image: product.image,
@@ -43,17 +42,16 @@ const BeautyPersonalCare = () => {
           Discover premium beauty and self-care products for your routine
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto px-4">
         {formattedProducts.map((data, i) => (
-          <Card key={data.id || i}>
-            <ItemFormat
-              name={data.name}
-              image={data.image}
-              id={data.id}
-              description={data.description}
-              price={data.price}
-            />
-          </Card>
+          <ItemFormat
+            key={data.id || i}
+            name={data.name}
+            image={data.image}
+            id={data.id}
+            description={data.description}
+            price={data.price}
+          />
         ))}
       </div>
     </div>
