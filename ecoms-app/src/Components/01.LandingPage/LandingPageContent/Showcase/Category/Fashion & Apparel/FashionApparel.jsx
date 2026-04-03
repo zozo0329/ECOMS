@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import Card from "../../../../../UI/Card/Card";
 import { fetchProducts } from "../../../../../Other/API/Products";
+import ItemFormat from "./ItemFormat/ItemFormat";
 
 const FashionApparel = () => {
   const [fashionProducts, setFashionProducts] = useState([]);
@@ -45,14 +46,15 @@ const FashionApparel = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
         {formattedProducts.map((item, i) => (
-          <Card
-            key={item.id || i}
-            name={item.name}
-            price={item.price}
-            description={item.description}
-            image={item.image}
-            alt={item.name}
-          />
+          <Card key={item.id || i}>
+            <ItemFormat
+              name={item.name}
+              price={item.price}
+              description={item.description}
+              image={item.image}
+              alt={item.name}
+            />
+          </Card>
         ))}
       </div>
     </div>
