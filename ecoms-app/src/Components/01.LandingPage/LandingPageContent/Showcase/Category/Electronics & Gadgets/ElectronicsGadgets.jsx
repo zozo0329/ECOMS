@@ -31,7 +31,6 @@ const ElectronicsGadgets = () => {
     return electronicsProductsImages;
   }, [products]);
 
-  console.log(formattedProducts, "Electronics product images:");
   return (
     <>
       <div className="py-8">

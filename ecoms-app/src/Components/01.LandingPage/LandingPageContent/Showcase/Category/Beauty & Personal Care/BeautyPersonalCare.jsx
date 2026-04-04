@@ -1,9 +1,11 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { fetchProducts } from "../../../../../Other/API/Products";
-import ItemFormat from "./ItemFormat/ItemFormat";
 
 const BeautyPersonalCare = () => {
   const [beautyProducts, setBeautyProducts] = useState([]);
+  const scrollRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
+  
   useEffect(() => {
     const getProducts = async () => {
       try {
@@ -20,7 +22,7 @@ const BeautyPersonalCare = () => {
   }, []);
 
   const formattedProducts = useMemo(() => {
-    return beautyProducts.slice(0, 5).map((product) => {
+    return beautyProducts.slice(0, 8).map((product) => {
       return {
         name: product.name,
         image: product.image,
@@ -31,7 +33,20 @@ const BeautyPersonalCare = () => {
     });
   }, [beautyProducts]);
 
-  console.log(formattedProducts, "Beauty & Personal Care products:");
+  const formatPrice = (cents) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(cents / 100);
+  };
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const scrollAmount = direction === "left" ? -300 : 300;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="py-8">
       <div className="text-center mb-6">
@@ -42,18 +57,78 @@ const BeautyPersonalCare = () => {
           Discover premium beauty and self-care products for your routine
         </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto px-4">
-        {formattedProducts.map((data, i) => (
-          <ItemFormat
-            key={data.id || i}
-            name={data.name}
-            image={data.image}
-            id={data.id}
-            description={data.description}
-            price={data.price}
-          />
-        ))}
+      
+      <div className="relative">
+        {/* Left Arrow */}
+        <button
+          onClick={() => scroll("left")}
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md hidden md:block"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        {/* Right Arrow */}
+        <button
+          onClick={() => scroll("right")}
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md hidden md:block"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <div 
+          className="overflow-x-auto scrollbar-hide px-8"
+          ref={scrollRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div className={`flex whitespace-nowrap ${!isPaused ? "animate-scroll" : ""}`}>
+            {[...formattedProducts, ...formattedProducts].map((data, index) => (
+              <div
+                key={`${data.id}-${index}`}
+                className="flex-shrink-0 w-64 md:w-80 relative group cursor-pointer overflow-hidden"
+              >
+                <img
+                  src={data.image}
+                  alt={data.name}
+                  className="w-full h-64 md:h-80 object-cover transition-opacity duration-300"
+                />
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
+                  <h3 className="text-white text-lg font-semibold text-center mb-2">
+                    {data.name}
+                  </h3>
+                  <p className="text-gray-300 text-sm text-center mb-2 line-clamp-2">
+                    {data.description}
+                  </p>
+                  <span className="text-amber-500 font-bold text-xl">
+                    {formatPrice(data.price)}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+      
+      <style>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+          animation: scroll 20s linear infinite;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   );
 };

@@ -32,7 +32,6 @@ const FashionApparel = () => {
     });
     return clothingProducts;
   }, [fashionProducts]);
-  console.log(formattedProducts, "Fashion products:");
 
   return (
     <div className="py-8">

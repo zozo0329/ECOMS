@@ -19,7 +19,7 @@ const HomeKitchen = () => {
   }, []);
 
   const finalFormattedProduct = useMemo(() => {
-    const sliceProduct = product.slice(0, 5);
+    const sliceProduct = product.slice(0, 8);
     const formattedProducts = sliceProduct.map((product) => {
       return {
         name: product.name,
@@ -31,7 +31,14 @@ const HomeKitchen = () => {
     });
     return formattedProducts;
   }, [product]);
-  console.log(finalFormattedProduct, "HOME PRODUCTS: ");
+
+  const formatPrice = (cents) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(cents / 100);
+  };
+
   return (
     <div className="py-8">
       <div className="text-center mb-6">
@@ -44,21 +51,27 @@ const HomeKitchen = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto px-4">
-        {finalFormattedProduct.map((data, i) => (
+      <div className="flex overflow-x-auto gap-0 pb-4 scrollbar-hide">
+        {finalFormattedProduct.map((data) => (
           <div
-            key={data.id || i}
-            className="relative aspect-3/4 overflow-hidden rounded-xl bg-gray-100 group cursor-pointer"
+            key={data.id}
+            className="flex-shrink-0 w-64 md:w-80 relative group cursor-pointer overflow-hidden"
           >
             <img
               src={data.image}
               alt={data.name}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              className="w-full h-64 md:h-80 object-cover transition-opacity duration-300"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-sm font-semibold truncate">{data.name}</h3>
-              <p className="text-emerald-400 font-bold">${data.price}</p>
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
+              <h3 className="text-white text-lg font-semibold text-center mb-2">
+                {data.name}
+              </h3>
+              <p className="text-gray-300 text-sm text-center mb-2 line-clamp-2">
+                {data.description}
+              </p>
+              <span className="text-amber-500 font-bold text-xl">
+                {formatPrice(data.price)}
+              </span>
             </div>
           </div>
         ))}
