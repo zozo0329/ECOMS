@@ -1,7 +1,7 @@
 import React from "react";
 import ErrorPage from "../../../../UI/ErrorPage/ErrorPage";
 
-const SignUpMain = () => {
+const HelpMain = () => {
   return (
     <div>
       <ErrorPage />
@@ -9,4 +9,4 @@ const SignUpMain = () => {
   );
 };
 
-export default SignUpMain;
+export default HelpMain;

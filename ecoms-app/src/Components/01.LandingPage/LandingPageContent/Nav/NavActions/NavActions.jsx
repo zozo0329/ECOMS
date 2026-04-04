@@ -7,8 +7,8 @@ const NavActions = () => {
     <>
       <nav className="bg-[#cecece]">
         <ul className="flex flex-row gap-3 md:gap-5 items-center justify-end px-4 md:pr-10 md:pl-10 text-xs md:text-base">
-          <a
-            href=""
+          <Link
+            to="notification"
             className="flex items-center gap-1 hover:opacity-60 transition-all duration-300"
           >
             <span>
@@ -19,10 +19,10 @@ const NavActions = () => {
               />
             </span>
             <li className="hidden sm:block">Notifications</li>
-          </a>
+          </Link>
           <p className="text-[#acacac] hidden sm:block">|</p>
-          <a
-            href=""
+          <Link
+            to="help"
             className="flex items-center gap-1 hover:opacity-60 transition-all duration-300"
           >
             <span>
@@ -33,7 +33,7 @@ const NavActions = () => {
               />
             </span>
             <li className="hidden sm:block">Help</li>
-          </a>
+          </Link>
           <p className="text-[#acacac] hidden sm:block">|</p>
           <Link
             to="signUp"

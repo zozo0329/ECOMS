@@ -1,12 +1,12 @@
 import React from "react";
 import ErrorPage from "../../../../UI/ErrorPage/ErrorPage";
 
-const SignUpMain = () => {
+const NotificationMain = () => {
   return (
-    <div>
+    <>
       <ErrorPage />
-    </div>
+    </>
   );
 };
 
-export default SignUpMain;
+export default NotificationMain;
