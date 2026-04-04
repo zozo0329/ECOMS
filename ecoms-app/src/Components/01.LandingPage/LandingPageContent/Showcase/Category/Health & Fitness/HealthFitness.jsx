@@ -16,7 +16,6 @@ const HealthFitness = () => {
     };
     getProduct();
   }, []);
-  console.log(product, "FILTERED PRODUCTS:");
 
   const transformedData = useMemo(() => {
     const slicedData = product.slice(0, 4);
@@ -31,8 +30,6 @@ const HealthFitness = () => {
     });
     return formattedData;
   }, [product]);
-
-  console.log("TRANSFORMED PRODUCT: ", transformedData);
 
   const formatPrice = (cents) => {
     return new Intl.NumberFormat("en-US", {

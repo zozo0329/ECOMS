@@ -111,12 +111,12 @@ const BeautyPersonalCare = () => {
             {[...formattedProducts, ...formattedProducts].map((data, index) => (
               <div
                 key={`${data.id}-${index}`}
-                className="shrink-0 w-64 md:w-80 relative group cursor-pointer overflow-hidden"
+                className="shrink-0 w-72 md:w-96 relative group cursor-pointer overflow-hidden"
               >
                 <img
                   src={data.image}
                   alt={data.name}
-                  className="w-full h-64 md:h-80 object-cover transition-opacity duration-300"
+                  className="w-full h-80 md:h-96 lg:h-[500px] object-cover transition-opacity duration-300"
                 />
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
                   <h3 className="text-white text-lg font-semibold text-center mb-2">
