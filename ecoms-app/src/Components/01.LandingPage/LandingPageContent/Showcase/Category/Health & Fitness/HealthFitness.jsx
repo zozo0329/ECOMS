@@ -54,7 +54,7 @@ const HealthFitness = () => {
         </p>
       </div>
 
-      <div className="flex w-full h-64 md:h-80">
+      <div className="flex w-full h-80 md:h-96 lg:h-125">
         {transformedData.map((item) => (
           <div
             key={item.id}

@@ -5,7 +5,7 @@ const BeautyPersonalCare = () => {
   const [beautyProducts, setBeautyProducts] = useState([]);
   const scrollRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
-  
+
   useEffect(() => {
     const getProducts = async () => {
       try {
@@ -57,15 +57,25 @@ const BeautyPersonalCare = () => {
           Discover premium beauty and self-care products for your routine
         </p>
       </div>
-      
+
       <div className="relative">
         {/* Left Arrow */}
         <button
           onClick={() => scroll("left")}
           className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md hidden md:block"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
         </button>
 
@@ -74,22 +84,34 @@ const BeautyPersonalCare = () => {
           onClick={() => scroll("right")}
           className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md hidden md:block"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
           </svg>
         </button>
 
-        <div 
+        <div
           className="overflow-x-auto scrollbar-hide px-8"
           ref={scrollRef}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className={`flex whitespace-nowrap ${!isPaused ? "animate-scroll" : ""}`}>
+          <div
+            className={`flex whitespace-nowrap ${!isPaused ? "animate-scroll" : ""}`}
+          >
             {[...formattedProducts, ...formattedProducts].map((data, index) => (
               <div
                 key={`${data.id}-${index}`}
-                className="flex-shrink-0 w-64 md:w-80 relative group cursor-pointer overflow-hidden"
+                className="shrink-0 w-64 md:w-80 relative group cursor-pointer overflow-hidden"
               >
                 <img
                   src={data.image}
@@ -112,7 +134,7 @@ const BeautyPersonalCare = () => {
           </div>
         </div>
       </div>
-      
+
       <style>{`
         @keyframes scroll {
           0% { transform: translateX(0); }
