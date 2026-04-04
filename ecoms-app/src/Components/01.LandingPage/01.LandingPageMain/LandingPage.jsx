@@ -6,7 +6,9 @@ const LandingPage = () => {
   return (
     <div>
       <Navbar />
-      <ShowcaseMain />
+      <div className="pt-23.5">
+        <ShowcaseMain />
+      </div>
     </div>
   );
 };
