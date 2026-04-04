@@ -1,6 +1,7 @@
 import React from "react";
 import NotificationsIcon from "../../../../../Assets/Icons/Notification.png";
 import HelpIcon from "../../../../../Assets/Icons/Help_Icon.png";
+import { Link } from "react-router-dom";
 const NavActions = () => {
   return (
     <>
@@ -25,18 +26,28 @@ const NavActions = () => {
             className="flex items-center gap-1 hover:opacity-60 transition-all duration-300"
           >
             <span>
-              <img src={HelpIcon} alt="Help Icon" className="h-4 md:h-5 w-4 md:w-5" />
+              <img
+                src={HelpIcon}
+                alt="Help Icon"
+                className="h-4 md:h-5 w-4 md:w-5"
+              />
             </span>
             <li className="hidden sm:block">Help</li>
           </a>
           <p className="text-[#acacac] hidden sm:block">|</p>
-          <a href="" className="hover:opacity-60 transition-all duration-300">
+          <Link
+            to="signUp"
+            className="hover:opacity-60 transition-all duration-300"
+          >
             <li>Sign Up</li>
-          </a>
+          </Link>
           <p className="text-[#acacac]">|</p>
-          <a href="" className="hover:opacity-60 transition-all duration-300">
+          <Link
+            to="signIn"
+            className="hover:opacity-60 transition-all duration-300"
+          >
             <li>Login</li>
-          </a>
+          </Link>
         </ul>
       </nav>
     </>
