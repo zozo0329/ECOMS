@@ -41,7 +41,6 @@ export const ServicesColumn = () => (
     </ul>
   </div>
 );
-
 export const CompanyColumn = () => (
   <div className="col-span-1 space-y-4">
     <h6 className="text-gray-900 font-semibold text-sm uppercase tracking-wider cursor-default">
@@ -83,7 +82,6 @@ export const CompanyColumn = () => (
     </ul>
   </div>
 );
-
 export const LegalColumn = () => (
   <div className="col-span-1 space-y-4">
     <h6 className="text-gray-900 font-semibold text-sm uppercase tracking-wider cursor-default">

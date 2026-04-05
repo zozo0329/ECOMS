@@ -15,28 +15,36 @@ import TermsAndService from "../../01.LandingPage/RoutesComponents/Footer/03.Leg
 import PrivacyPolicy from "../../01.LandingPage/RoutesComponents/Footer/03.Legal/02PrivacyPolicy/PrivacyPolicy";
 import CookiePolicy from "../../01.LandingPage/RoutesComponents/Footer/03.Legal/03CookiePolicy/CookiePolicy";
 import RefundPolicy from "../../01.LandingPage/RoutesComponents/Footer/03.Legal/04RefundPolicy/RefundPolicy";
+import Privacy from "../../01.LandingPage/RoutesComponents/Footer/04.BottomFooter/01Privacy/Privacy";
+import Terms from "../../01.LandingPage/RoutesComponents/Footer/04.BottomFooter/02Terms/Terms";
+import Cookies from "../../01.LandingPage/RoutesComponents/Footer/04.BottomFooter/03Cookies/Cookies";
 
 export const headerRoutes = [
-  { path: "notification", element: <NotificationMain /> },
-  { path: "help", element: <HelpMain /> },
-  { path: "signUp", element: <SignUpMain /> },
-  { path: "signIn", element: <SignInMain /> },
+  { path: "/notification", element: <NotificationMain /> },
+  { path: "/help", element: <HelpMain /> },
+  { path: "/signUp", element: <SignUpMain /> },
+  { path: "/signIn", element: <SignInMain /> },
 ];
 export const servicesRoutes = [
-  { path: "branding", element: <Branding /> },
-  { path: "design", element: <Design /> },
-  { path: "marketing", element: <Marketing /> },
-  { path: "advertisement", element: <Advertisement /> },
+  { path: "/branding", element: <Branding /> },
+  { path: "/design", element: <Design /> },
+  { path: "/marketing", element: <Marketing /> },
+  { path: "/advertisement", element: <Advertisement /> },
 ];
 export const companyRoutes = [
-  { path: "aboutUs", element: <AboutUs /> },
-  { path: "contact", element: <Contact /> },
-  { path: "careers", element: <Careers /> },
-  { path: "pressKit", element: <PressKit /> },
+  { path: "/aboutUs", element: <AboutUs /> },
+  { path: "/contact", element: <Contact /> },
+  { path: "/careers", element: <Careers /> },
+  { path: "/pressKit", element: <PressKit /> },
 ];
 export const legalRoutes = [
-  { path: "termsOfService", element: <TermsAndService /> },
-  { path: "privacyPolicy", element: <PrivacyPolicy /> },
-  { path: "cookiePolicy", element: <CookiePolicy /> },
-  { path: "refundPolicy", element: <RefundPolicy /> },
+  { path: "/termsOfService", element: <TermsAndService /> },
+  { path: "/privacyPolicy", element: <PrivacyPolicy /> },
+  { path: "/cookiePolicy", element: <CookiePolicy /> },
+  { path: "/refundPolicy", element: <RefundPolicy /> },
+];
+export const bottomFooterRoutes = [
+  { path: "/privacy", element: <Privacy /> },
+  { path: "/terms", element: <Terms /> },
+  { path: "/cookies", element: <Cookies /> },
 ];

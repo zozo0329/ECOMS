@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const BottomFooter = () => {
   return (
     <>
@@ -10,24 +10,24 @@ const BottomFooter = () => {
               © {new Date().getFullYear()} STOREX. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <a
-                href="#"
+              <Link
+                to="/privacy"
                 className="text-sm text-gray-700 hover:underline transition-colors duration-200"
               >
                 Privacy
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/terms"
                 className="text-sm text-gray-700 hover:underline  transition-colors duration-200"
               >
                 Terms
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/cookies"
                 className="text-sm text-gray-700 hover:underline transition-colors duration-200"
               >
                 Cookies
-              </a>
+              </Link>
             </div>
           </div>
         </div>

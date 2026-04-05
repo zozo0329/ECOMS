@@ -5,6 +5,7 @@ import {
   servicesRoutes,
   companyRoutes,
   legalRoutes,
+  bottomFooterRoutes,
 } from "../RouteData/RouteData.jsx";
 import LandingPage from "../../01.LandingPage/01.LandingPageMain/LandingPage";
 
@@ -20,6 +21,10 @@ const FormatedcompanyRoutes = companyRoutes.map((route, i) => (
 const FormatedLegalRoutes = legalRoutes.map((route, i) => (
   <Route key={route.path || i} path={route.path} element={route.element} />
 ));
+const FormatedBottomFooterRoutes = bottomFooterRoutes.map((route, i) => (
+  <Route key={route.path || i} path={route.path} element={route.element} />
+));
+console.log(bottomFooterRoutes, "FOOTER ROUTES");
 const RouteLayout = () => {
   return (
     <Routes>
@@ -30,6 +35,7 @@ const RouteLayout = () => {
       {FormatedServiceRoutes}
       {FormatedcompanyRoutes}
       {FormatedLegalRoutes}
+      {FormatedBottomFooterRoutes}
     </Routes>
   );
 };
