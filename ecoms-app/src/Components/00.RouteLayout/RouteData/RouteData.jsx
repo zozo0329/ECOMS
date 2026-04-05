@@ -7,6 +7,14 @@ import Branding from "../../01.LandingPage/RoutesComponents/Footer/01.Services/B
 import Design from "../../01.LandingPage/RoutesComponents/Footer/01.Services/Design/Design";
 import Marketing from "../../01.LandingPage/RoutesComponents/Footer/01.Services/Marketing/Marketing";
 import Advertisement from "../../01.LandingPage/RoutesComponents/Footer/01.Services/Advertisement/Advertisement";
+import AboutUs from "../../01.LandingPage/RoutesComponents/Footer/02.Company/01.AboutUs/AboutUs";
+import Contact from "../../01.LandingPage/RoutesComponents/Footer/02.Company/02Contact/Contact";
+import Careers from "../../01.LandingPage/RoutesComponents/Footer/02.Company/03Careers/Careers";
+import PressKit from "../../01.LandingPage/RoutesComponents/Footer/02.Company/04PressKit/PressKit";
+import TermsAndService from "../../01.LandingPage/RoutesComponents/Footer/03.Legal/01TermsAndService/TermsAndService";
+import PrivacyPolicy from "../../01.LandingPage/RoutesComponents/Footer/03.Legal/02PrivacyPolicy/PrivacyPolicy";
+import CookiePolicy from "../../01.LandingPage/RoutesComponents/Footer/03.Legal/03CookiePolicy/CookiePolicy";
+import RefundPolicy from "../../01.LandingPage/RoutesComponents/Footer/03.Legal/04RefundPolicy/RefundPolicy";
 
 export const headerRoutes = [
   { path: "notification", element: <NotificationMain /> },
@@ -19,4 +27,16 @@ export const servicesRoutes = [
   { path: "design", element: <Design /> },
   { path: "marketing", element: <Marketing /> },
   { path: "advertisement", element: <Advertisement /> },
+];
+export const companyRoutes = [
+  { path: "aboutUs", element: <AboutUs /> },
+  { path: "contact", element: <Contact /> },
+  { path: "careers", element: <Careers /> },
+  { path: "pressKit", element: <PressKit /> },
+];
+export const legalRoutes = [
+  { path: "termsOfService", element: <TermsAndService /> },
+  { path: "privacyPolicy", element: <PrivacyPolicy /> },
+  { path: "cookiePolicy", element: <CookiePolicy /> },
+  { path: "refundPolicy", element: <RefundPolicy /> },
 ];

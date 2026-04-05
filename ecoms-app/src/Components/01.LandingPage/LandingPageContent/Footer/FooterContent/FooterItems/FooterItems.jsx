@@ -49,36 +49,36 @@ export const CompanyColumn = () => (
     </h6>
     <ul className="space-y-3">
       <li>
-        <a
-          href="#"
+        <Link
+          to="aboutUs"
           className="text-sm text-gray-600 hover:underline cursor-pointer"
         >
           About Us
-        </a>
+        </Link>
       </li>
       <li>
-        <a
-          href="#"
+        <Link
+          to="contact"
           className="text-sm text-gray-600 hover:underline cursor-pointer"
         >
           Contact
-        </a>
+        </Link>
       </li>
       <li>
-        <a
-          href="#"
+        <Link
+          to="careers"
           className="text-sm text-gray-600 hover:underline cursor-pointer"
         >
           Careers
-        </a>
+        </Link>
       </li>
       <li>
-        <a
-          href="#"
+        <Link
+          to="pressKit"
           className="text-sm text-gray-600 hover:underline cursor-pointer"
         >
           Press Kit
-        </a>
+        </Link>
       </li>
     </ul>
   </div>
@@ -91,36 +91,36 @@ export const LegalColumn = () => (
     </h6>
     <ul className="space-y-3">
       <li>
-        <a
-          href="#"
+        <Link
+          to="termsOfService"
           className="text-sm text-gray-600 hover:underline cursor-pointer"
         >
           Terms of Service
-        </a>
+        </Link>
       </li>
       <li>
-        <a
-          href="#"
+        <Link
+          to="privacyPolicy"
           className="text-sm text-gray-600 hover:underline cursor-pointer"
         >
           Privacy Policy
-        </a>
+        </Link>
       </li>
       <li>
-        <a
-          href="#"
+        <Link
+          to="cookiePolicy"
           className="text-sm text-gray-600 hover:underline cursor-pointer"
         >
           Cookie Policy
-        </a>
+        </Link>
       </li>
       <li>
-        <a
-          href="#"
+        <Link
+          to="refundPolicy"
           className="text-sm text-gray-600 hover:underline cursor-pointer"
         >
           Refund Policy
-        </a>
+        </Link>
       </li>
     </ul>
   </div>
