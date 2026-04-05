@@ -1,15 +1,43 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export const ServicesColumn = () => (
   <div className="col-span-1 space-y-4">
     <h6 className="text-gray-900 font-semibold text-sm uppercase tracking-wider cursor-default">
       Services
     </h6>
     <ul className="space-y-3">
-      <li><a href="#" className="text-sm text-gray-600 hover:underline cursor-pointer">Branding</a></li>
-      <li><a href="#" className="text-sm text-gray-600 hover:underline cursor-pointer">Design</a></li>
-      <li><a href="#" className="text-sm text-gray-600 hover:underline cursor-pointer">Marketing</a></li>
-      <li><a href="#" className="text-sm text-gray-600 hover:underline cursor-pointer">Advertisement</a></li>
+      <li>
+        <Link
+          to="branding"
+          className="text-sm text-gray-600 hover:underline cursor-pointer"
+        >
+          Branding
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="design"
+          className="text-sm text-gray-600 hover:underline cursor-pointer"
+        >
+          Design
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="marketing"
+          className="text-sm text-gray-600 hover:underline cursor-pointer"
+        >
+          Marketing
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="advertisement"
+          className="text-sm text-gray-600 hover:underline cursor-pointer"
+        >
+          Advertisement
+        </Link>
+      </li>
     </ul>
   </div>
 );
@@ -20,10 +48,38 @@ export const CompanyColumn = () => (
       Company
     </h6>
     <ul className="space-y-3">
-      <li><a href="#" className="text-sm text-gray-600 hover:underline cursor-pointer">About Us</a></li>
-      <li><a href="#" className="text-sm text-gray-600 hover:underline cursor-pointer">Contact</a></li>
-      <li><a href="#" className="text-sm text-gray-600 hover:underline cursor-pointer">Careers</a></li>
-      <li><a href="#" className="text-sm text-gray-600 hover:underline cursor-pointer">Press Kit</a></li>
+      <li>
+        <a
+          href="#"
+          className="text-sm text-gray-600 hover:underline cursor-pointer"
+        >
+          About Us
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          className="text-sm text-gray-600 hover:underline cursor-pointer"
+        >
+          Contact
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          className="text-sm text-gray-600 hover:underline cursor-pointer"
+        >
+          Careers
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          className="text-sm text-gray-600 hover:underline cursor-pointer"
+        >
+          Press Kit
+        </a>
+      </li>
     </ul>
   </div>
 );
@@ -34,10 +90,38 @@ export const LegalColumn = () => (
       Legal
     </h6>
     <ul className="space-y-3">
-      <li><a href="#" className="text-sm text-gray-600 hover:underline cursor-pointer">Terms of Service</a></li>
-      <li><a href="#" className="text-sm text-gray-600 hover:underline cursor-pointer">Privacy Policy</a></li>
-      <li><a href="#" className="text-sm text-gray-600 hover:underline cursor-pointer">Cookie Policy</a></li>
-      <li><a href="#" className="text-sm text-gray-600 hover:underline cursor-pointer">Refund Policy</a></li>
+      <li>
+        <a
+          href="#"
+          className="text-sm text-gray-600 hover:underline cursor-pointer"
+        >
+          Terms of Service
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          className="text-sm text-gray-600 hover:underline cursor-pointer"
+        >
+          Privacy Policy
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          className="text-sm text-gray-600 hover:underline cursor-pointer"
+        >
+          Cookie Policy
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          className="text-sm text-gray-600 hover:underline cursor-pointer"
+        >
+          Refund Policy
+        </a>
+      </li>
     </ul>
   </div>
 );
