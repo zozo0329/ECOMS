@@ -2,7 +2,7 @@ import React from "react";
 import LogoIcon from "../../../../../../../Assets/Icons/storex_Logo.png";
 import { Link } from "react-router-dom";
 
-const Logo = () => {
+const SignInLogo = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-4 mb-6">
       <Link to="/">
@@ -14,14 +14,14 @@ const Logo = () => {
       </Link>
       <div className="text-center">
         <h1 className="text-2xl font-bold text-gray-900 cursor-default">
-          Create your account
+          Welcome back
         </h1>
         <p className="text-sm text-gray-500 mt-1 cursor-default">
-          Join STOREX and start shopping
+          Sign in to your account
         </p>
       </div>
     </div>
   );
 };
 
-export default Logo;
+export default SignInLogo;
