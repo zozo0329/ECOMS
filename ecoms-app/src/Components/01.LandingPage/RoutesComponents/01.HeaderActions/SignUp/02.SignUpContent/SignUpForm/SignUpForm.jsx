@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 const SignUpForm = () => {
   return (
     <div className="w-full max-w-md">

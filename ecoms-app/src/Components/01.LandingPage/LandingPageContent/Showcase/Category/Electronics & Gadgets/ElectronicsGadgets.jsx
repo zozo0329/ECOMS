@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
-import { fetchProducts } from "../../../../../Other/API/Products";
+import { fetchProducts } from "../../../../../../Other/API/Products";
 import Carousel from "../../../../../UI/Carousel/Carousel";
 const ElectronicsGadgets = () => {
   const [products, setProducts] = useState([]);
@@ -20,15 +20,12 @@ const ElectronicsGadgets = () => {
   }, []);
   const formattedProducts = useMemo(() => {
     const fiveProducts = products.slice(0, 5);
-    const electronicsProductsImages = fiveProducts.map((product) => {
-      return {
-        image: product.image,
-        id: product.id,
-        title: product.title,
-        price: product.price,
-      };
-    });
-    return electronicsProductsImages;
+    return fiveProducts.map((product) => ({
+      image: product.image,
+      id: product.id,
+      title: product.name,
+      price: product.price,
+    }));
   }, [products]);
 
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { fetchProducts } from "../../../../../Other/API/Products";
+import { fetchProducts } from "../../../../../../Other/API/Products";
 
 const BeautyPersonalCare = () => {
   const [beautyProducts, setBeautyProducts] = useState([]);

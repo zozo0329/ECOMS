@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import Card from "../../../../../UI/Card/Card";
-import { fetchProducts } from "../../../../../Other/API/Products";
+import { fetchProducts } from "../../../../../../Other/API/Products";
 import ItemFormat from "./ItemFormat/ItemFormat";
 
 const FashionApparel = () => {

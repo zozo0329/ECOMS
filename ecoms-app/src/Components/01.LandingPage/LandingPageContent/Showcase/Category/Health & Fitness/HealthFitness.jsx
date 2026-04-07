@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { fetchProducts } from "../../../../../Other/API/Products";
+import { fetchProducts } from "../../../../../../Other/API/Products";
 const HealthFitness = () => {
   const [product, setProducts] = useState([]);
   useEffect(() => {
